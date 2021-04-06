@@ -1,34 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
-import header from '../../images/header.png';
-import logo from '../../images/icons/logo.png';
-
+import { Navbar, Nav } from 'react-bootstrap';
 const Header = () => {
-    return (
-        <div style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${header})` }} className="header">
-            <nav className="nav">
-                <ul>
-                    <li>
-                        <img className="logo" src={logo} alt=""/>
-                    </li>
-                    <li>
-                        <Link to="/home">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/login">Login</Link>
-                    </li>
-                    <li>
-                        <Link className="btn-book" to="/book">Book</Link>
-                    </li>
-                </ul>
-            </nav>
-            <div className="title-container">
-                <h1>Burj Al Arab</h1>
-                <h2>A global icon of Arabian luxury</h2>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <Navbar bg="light" expand="md">
+        <Navbar.Brand href="#home">Boi Mela</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Link as={Link} to="/home">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/home">
+              Orders
+            </Nav.Link>
+            <Nav.Link as={Link} to="/#">
+              Admin
+            </Nav.Link>
+            <Nav.Link as={Link} to="/#">
+              Deals
+            </Nav.Link>
+            <Nav.Link as={Link} to="/login">
+              Login
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
+  );
 };
 
 export default Header;

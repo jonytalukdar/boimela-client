@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyAsihSADFnF_FoZ6je8p1W9lilyqX7cHWQ",
-    authDomain: "burj-al-arab.firebaseapp.com",
-    databaseURL: "https://burj-al-arab.firebaseio.com",
-    projectId: "burj-al-arab",
-    storageBucket: "burj-al-arab.appspot.com",
-    messagingSenderId: "244522202387",
-    appId: "1:244522202387:web:f3801d0588387140e1d6e6"
-  };
-  export default firebaseConfig;
+  apiKey: 'AIzaSyCAe47KAQI3CPhWoeOLxdhL9DLQx7aSI7A',
+  authDomain: 'fresh-grocery-c0e38.firebaseapp.com',
+  projectId: 'fresh-grocery-c0e38',
+  storageBucket: 'fresh-grocery-c0e38.appspot.com',
+  messagingSenderId: '631456166773',
+  appId: '1:631456166773:web:b72ccecdac45d149f4d93c',
+};
+
+export default firebaseConfig;
