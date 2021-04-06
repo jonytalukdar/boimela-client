@@ -32,9 +32,10 @@ const Login = () => {
       });
   };
   return (
-    <div>
-      <h1>This is Login</h1>
-      <button onClick={handleGoogleSignIn}>Google Sign in</button>
+    <div className="text-center mt-5">
+      <button className="btn btn-outline-primary" onClick={handleGoogleSignIn}>
+        Continue With Google
+      </button>
     </div>
   );
 };
