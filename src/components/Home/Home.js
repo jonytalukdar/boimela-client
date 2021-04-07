@@ -14,7 +14,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="row">
+    <div className="row m-4">
       {books.map((book) => (
         <Books key={book.title} book={book}></Books>
       ))}
