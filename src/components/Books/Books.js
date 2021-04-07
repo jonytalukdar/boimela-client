@@ -9,13 +9,10 @@ const Books = ({ book }) => {
   };
   return (
     <Card className="col-md-4">
-      <Card.Img
-        variant="top"
-        src={require(`../images/${book.imgUrl}`)}
-        alt=""
-      />
+      <Card.Img variant="top" src={book.imageURL} alt="" />
       <Card.Body>
         <Card.Title>{book.title}</Card.Title>
+        <p>By {book.author}</p>
         <div className="d-flex justify-content-between mx-3">
           <h3> $ {book.price}</h3>
           <Button onClick={() => handleBook(book.bookType)} variant="primary">

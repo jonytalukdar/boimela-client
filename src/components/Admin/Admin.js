@@ -45,20 +45,16 @@ const Admin = () => {
   };
   return (
     <div>
+      <h2>Add Books</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input defaultValue="new title" {...register('title')} />
-        <input defaultValue="new author" {...register('author')} />
-        <input type="number" {...register('price', { valueAsNumber: true })} />
-
-        {/* <input defaultValue="test" {...register('example')} />
-        <br />
-        <input defaultValue="test" {...register('example')} />
-        <br />
-        <input defaultValue="test" {...register('example')} />
-        <br /> */}
-
+        <input placeholder="Title" {...register('title')} />
+        <input placeholder="Author" {...register('author')} />
+        <input
+          placeholder="Price"
+          type="number"
+          {...register('price', { valueAsNumber: true })}
+        />
         <input type="file" onChange={handleImgUpload} />
-
         <input type="submit" />
       </form>
     </div>
