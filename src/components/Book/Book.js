@@ -18,7 +18,7 @@ const Book = () => {
   return (
     <div style={{ textAlign: 'center' }}>
       {checkout.map((book) => (
-        <Table striped bordered hover>
+        <Table striped bordered hover className="mt-5">
           <thead>
             <tr>
               <th>Title</th>

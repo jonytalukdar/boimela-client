@@ -47,7 +47,7 @@ const Admin = () => {
   return (
     <div className="row">
       <div className="col-md-5">
-        <Link to="/login">Manage Books</Link>
+        <Link to="/manage">Manage Books</Link>
       </div>
       <div className="col-md-7">
         <div>
