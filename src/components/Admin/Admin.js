@@ -44,19 +44,33 @@ const Admin = () => {
       });
   };
   return (
-    <div>
-      <h2>Add Books</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input placeholder="Title" {...register('title')} />
-        <input placeholder="Author" {...register('author')} />
-        <input
-          placeholder="Price"
-          type="number"
-          {...register('price', { valueAsNumber: true })}
-        />
-        <input type="file" onChange={handleImgUpload} />
-        <input type="submit" />
-      </form>
+    <div className="row">
+      <div className="col-md-5"></div>
+      <div className="col-md-7">
+        <div>
+          <h2>Add Books</h2>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input
+              className="form-control w-50"
+              placeholder="Title"
+              {...register('title')}
+            />
+            <input
+              className="form-control w-50"
+              placeholder="Author"
+              {...register('author')}
+            />
+            <input
+              className="form-control w-50"
+              placeholder="Price"
+              type="number"
+              {...register('price', { valueAsNumber: true })}
+            />
+            <input type="file" onChange={handleImgUpload} />
+            <input className="btn btn-primary" type="submit" />
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
