@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 const axios = require('axios');
 
 const Admin = () => {
@@ -45,7 +46,9 @@ const Admin = () => {
   };
   return (
     <div className="row">
-      <div className="col-md-5"></div>
+      <div className="col-md-5">
+        <Link to="/login">Manage Books</Link>
+      </div>
       <div className="col-md-7">
         <div>
           <h2>Add Books</h2>

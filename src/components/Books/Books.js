@@ -4,8 +4,9 @@ import { useHistory } from 'react-router-dom';
 
 const Books = ({ book }) => {
   const history = useHistory();
-  const handleBook = (bookType) => {
-    history.push(`/book/${bookType}`);
+
+  const handleBook = (_id) => {
+    history.push(`/book/${_id}`);
   };
   return (
     <Card className="col-md-4">
@@ -15,7 +16,7 @@ const Books = ({ book }) => {
         <p>By {book.author}</p>
         <div className="d-flex justify-content-between mx-3">
           <h3> $ {book.price}</h3>
-          <Button onClick={() => handleBook(book.bookType)} variant="primary">
+          <Button onClick={() => handleBook(book._id)} variant="primary">
             Buy Now
           </Button>
         </div>

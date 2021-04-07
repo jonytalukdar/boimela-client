@@ -23,7 +23,7 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <PrivateRoute path="/book/:bookType">
+          <PrivateRoute path="/book/:_id">
             <Book />
           </PrivateRoute>
           <Route exact path="/">
