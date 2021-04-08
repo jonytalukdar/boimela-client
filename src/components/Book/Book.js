@@ -6,7 +6,6 @@ import { UserContext } from '../../App';
 const Book = () => {
   const { _id } = useParams();
   const [checkout, setCheckout] = useState([]);
-
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   useEffect(() => {
