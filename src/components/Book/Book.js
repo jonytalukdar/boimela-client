@@ -9,7 +9,7 @@ const Book = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/books/${_id}`)
+    fetch(`https://arcane-shelf-91213.herokuapp.com/books/${_id}`)
       .then((res) => res.json())
       .then((data) => {
         setCheckout(data);
@@ -18,7 +18,7 @@ const Book = () => {
 
   const handleCheckOut = () => {
     const newCheckout = { ...loggedInUser, ...checkout };
-    fetch('http://localhost:5000/checkout', {
+    fetch('https://arcane-shelf-91213.herokuapp.com/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newCheckout),

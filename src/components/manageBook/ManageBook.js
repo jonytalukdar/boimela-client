@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ManageBook = ({ book }) => {
   const [books, setBooks] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/books')
+    fetch('https://arcane-shelf-91213.herokuapp.com/books')
       .then((res) => res.json())
       .then((data) => {
         setBooks(data);

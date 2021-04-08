@@ -19,7 +19,7 @@ const Admin = () => {
       price: data.price,
       imageURL: imageURL,
     };
-    const url = `http://localhost:5000/addBook`;
+    const url = `https://arcane-shelf-91213.herokuapp.com/addBook`;
     fetch(url, {
       method: 'POST',
       headers: {

@@ -9,6 +9,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Admin from './components/Admin/Admin';
 import { Container } from 'react-bootstrap';
 import ManageBook from './components/manageBook/ManageBook';
+import Orders from './components/Orders/Orders';
 
 export const UserContext = createContext();
 
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route path="/manage">
               <ManageBook></ManageBook>
+            </Route>
+            <Route>
+              <Orders></Orders>
             </Route>
           </Switch>
         </Router>
