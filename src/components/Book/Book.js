@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
+import { UserContext } from '../../App';
 
 const Book = () => {
   const { _id } = useParams();
-
   const [checkout, setCheckout] = useState([]);
+
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   useEffect(() => {
     fetch(`http://localhost:5000/books/${_id}`)
@@ -14,6 +16,19 @@ const Book = () => {
         setCheckout(data);
       });
   }, []);
+
+  const handleCheckOut = () => {
+    const newCheckout = { ...loggedInUser, ...checkout };
+    fetch('http://localhost:5000/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newCheckout),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
   return (
     <div style={{ textAlign: 'center' }}>
@@ -41,11 +56,9 @@ const Book = () => {
         </Table>
       ))}
 
-      <button className="btn btn-primary">Checkout</button>
-
-      <p>
-        Want a <Link to="/home">different book?</Link>{' '}
-      </p>
+      <button onClick={handleCheckOut} className="btn btn-primary">
+        Checkout
+      </button>
     </div>
   );
 };

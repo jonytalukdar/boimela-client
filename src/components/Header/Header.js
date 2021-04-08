@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { Navbar, Nav } from 'react-bootstrap';
+import { UserContext } from '../../App';
 const Header = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   return (
     <div>
-      <Navbar bg="light" expand="md">
+      <Navbar expand="md">
         <Navbar.Brand href="#home">Boi Mela</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -22,9 +24,17 @@ const Header = () => {
             <Nav.Link as={Link} to="/#">
               Deals
             </Nav.Link>
-            <Nav.Link as={Link} to="/login">
-              Login
-            </Nav.Link>
+            {loggedInUser.name || loggedInUser.email ? (
+              <Nav.Link>{loggedInUser.name}</Nav.Link>
+            ) : (
+              <Nav.Link
+                className="btn btn-primary text-white"
+                as={Link}
+                to="/login"
+              >
+                Login
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

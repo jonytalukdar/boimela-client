@@ -45,9 +45,11 @@ const Admin = () => {
       });
   };
   return (
-    <div className="row">
+    <div className="row mt-5">
       <div className="col-md-5">
-        <Link to="/manage">Manage Books</Link>
+        <Link to="/manage">
+          <h3>Manage Books</h3>
+        </Link>
       </div>
       <div className="col-md-7">
         <div>
